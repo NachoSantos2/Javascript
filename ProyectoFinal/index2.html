@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smash Paddel - Reservas</title>
+    
+    <!-- Agregar el logo en la pestaña -->
+    <link rel="icon" href="Logo/Logo1.ico" type="image/x-icon">
+
+    <!-- Enlace a tu hoja de estilos CSS -->
+    <link rel="stylesheet" href="css/encabezado.css">
+    <link rel="stylesheet" href="css/ubicacion.css">
+    <link rel="stylesheet" href="css/tabla.css">
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header id="encabezado">
+        <section class="menu">
+            <div class="logo-container">
+                <h1 class="logo"> SMASH </h1>
+                <!-- <img src="Smash.png" alt="Smash Paddel Logo" class="logo"> -->
+            </div>
+            <nav>
+                <ul class="lista-desplegable">
+                    <li class="menu-item">
+                        <a href="#" class="menu-link">Inicio</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#" class="menu-link">Turnos <img src="assets/arrow.svg" class="menu-arrow"></a>
+
+                        <ul class="lista-desplegable-turnos">
+                            <li class="menu-inside">
+                                <a href="#" class="menu-link menu-inside-inside">Reserva Ahora</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#" class="menu-link">Contacto</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="menu-rayas">
+                <img src="assets/menu.svg" class="menu-img">3
+            </div>
+        </section>
+    </header>
+    <section id="ubicacion">
+        <div class="titulo-ubicacion">
+            <h2>Nuestra Ubicacion</h2>
+        </div>
+        <div class="mapa">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5550.720190881836!2d-67.5794286550476!3d-45.92410227960004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbde5ac6deac1700f%3A0x766edece10542d42!2sSmash%20Padel!5e0!3m2!1ses-419!2sar!4v1707166716020!5m2!1ses-419!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+    <!-- Contenido de la página -->
+    <main>
+        <!-- Sección de Turnos -->
+        <section id="turnos">
+            <h2 class="titulo">Turnos</h2>
+
+            <!-- Tabla de horarios -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Día/Hora</th>
+                        <th>15:00</th>
+                        <th>17:00</th>
+                        <th>19:00</th>
+                        <!-- Agrega más columnas para otros horarios -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lunes</td>
+                        <td class="horario" data-dia="Lunes" data-hora="15:00"></td>
+                        <td class="horario" data-dia="Lunes" data-hora="17:00"></td>
+                        <td class="horario" data-dia="Lunes" data-hora="19:00"></td>
+                        <!-- Agrega más columnas para otros horarios -->
+                    </tr>
+                    <!-- Agrega más filas para otros días -->
+                    <tr>
+                        <td>Martes</td>
+                        <td class="horario" data-dia="Martes" data-hora="15:00"></td>
+                        <td class="horario" data-dia="Martes" data-hora="17:00"></td>
+                        <td class="horario" data-dia="Martes" data-hora="19:00"></td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Mercoles</td>
+                        <td class="horario" data-dia="Miercoles" data-hora="15:00"></td>
+                        <td class="horario" data-dia="Miercoles" data-hora="17:00"></td>
+                        <td class="horario" data-dia="Miercoles" data-hora="19:00"></td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Jueves</td>
+                        <td class="horario" data-dia="Jueves" data-hora="15:00"></td>
+                        <td class="horario" data-dia="Jueves" data-hora="17:00"></td>
+                        <td class="horario" data-dia="Jueves" data-hora="19:00"></td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Viernes</td>
+                        <td class="horario" data-dia="Viernes" data-hora="15:00"></td>
+                        <td class="horario" data-dia="Viernes" data-hora="17:00"></td>
+                        <td class="horario" data-dia="Viernes" data-hora="19:00"></td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Sabado</td>
+                        <td class="horario" data-dia="Sabado" data-hora="15:00"></td>
+                        <td class="horario" data-dia="Sabado" data-hora="17:00"></td>
+                        <td class="horario" data-dia="Sabado" data-hora="19:00"></td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Domingo</td>
+                        <td class="horario" data-dia="Domingo" data-hora="15:00"></td>
+                        <td class="horario" data-dia="Domingo" data-hora="17:00"></td>
+                        <td class="horario" data-dia="Domingo" data-hora="19:00"></td>
+                        
+                    </tr>
+                        
+                </tbody>
+            </table>
+
+            <!-- Contenedor para centrar el botón -->
+            <div class="button-container">
+                <button id="btnReservar" onclick="reservarTurno()">Reservar Turno</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de Página -->
+    <footer>
+        <div class="contacto">
+            <p>Email: info@smashpaddel.com</p>
+            <p>Teléfono: (123) 456-7890</p>
+        </div>
+        <div class="redes-sociales">
+            <a href="#" target="_blank">Facebook</a>
+            <a href="#" target="_blank">Twitter</a>
+            <a href="#" target="_blank">Instagram</a>
+        </div>
+        <div class="whatsapp">
+            <a href="https://wa.me/1234567890" target="_blank" class="whatsapp-icon">¡Contáctanos en WhatsApp!</a>
+        </div>
+    </footer>
+
+    <!-- Script de JavaScript (si es necesario) -->
+    <script src="javascript/main.js"></script>
+</body>
+</html>
