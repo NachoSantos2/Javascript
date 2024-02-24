@@ -1,9 +1,34 @@
+/*
 .titulo-ubicacion{
-    text-align: center;
+    text-align: right;
     margin-top: 130px;
+    margin-right: 270px;
 }
 
 .mapa{
-    text-align: center;
+    text-align: right;
     margin-top: 30px;
+    margin-right: 200px;
+}
+*/
+#tienda-ubicacion{
+    display: flex;
+    justify-content: space-around;
+
+}
+
+#tienda,
+#ubicacion {
+    width: 45%; /* Ajusta el ancho según tus preferencias */
+    margin: 40px;
+}
+
+#ubicacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mapa {
+    margin-top: 20px;
 }

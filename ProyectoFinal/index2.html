@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="css/encabezado.css">
     <link rel="stylesheet" href="css/ubicacion.css">
     <link rel="stylesheet" href="css/tabla.css">
+    <link rel="stylesheet" href="css/pie.css">
+    <link rel="stylesheet" href="css/botonWpp.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="css/titulo.css">
 </head>
 <body>
 
@@ -19,47 +24,227 @@
     <header id="encabezado">
         <section class="menu">
             <div class="logo-container">
-                <h1 class="logo"> SMASH </h1>
-                <!-- <img src="Smash.png" alt="Smash Paddel Logo" class="logo"> -->
+                <a href="#" class="logo-link">
+                    <h1 class="logo"> SMASH </h1>
+                </a>
             </div>
-            <nav>
-                <ul class="lista-desplegable">
+            <div class="menu-rayas" onclick="toggleMenu()">
+                <img src="assets/menu.svg" class="menu-img">
+            </div>
+            <nav class="lista-desplegable">
+                <ul class="menu-lista">
                     <li class="menu-item">
                         <a href="#" class="menu-link">Inicio</a>
                     </li>
                     <li class="menu-item">
-                        <a href="#" class="menu-link">Turnos <img src="assets/arrow.svg" class="menu-arrow"></a>
-
+                        <a href="#ubicacion" class="menu-link">Turnos <img src="assets/arrow.svg" class="menu-arrow"></a>
                         <ul class="lista-desplegable-turnos">
                             <li class="menu-inside">
-                                <a href="#" class="menu-link menu-inside-inside">Reserva Ahora</a>
+                                <a href="#turnos" class="menu-link menu-inside-inside">Reserva Ahora</a>
                             </li>
                         </ul>
                     </li>
                     <li class="menu-item">
-                        <a href="#" class="menu-link">Contacto</a>
+                        <a href="#contacto" class="menu-link">Contacto</a>
                     </li>
                 </ul>
             </nav>
-            <div class="menu-rayas">
-                <img src="assets/menu.svg" class="menu-img">3
-            </div>
         </section>
     </header>
-    <section id="ubicacion">
-        <div class="titulo-ubicacion">
-            <h2>Nuestra Ubicacion</h2>
-        </div>
-        <div class="mapa">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5550.720190881836!2d-67.5794286550476!3d-45.92410227960004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbde5ac6deac1700f%3A0x766edece10542d42!2sSmash%20Padel!5e0!3m2!1ses-419!2sar!4v1707166716020!5m2!1ses-419!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
+        
+    <section id="titulo">
+        <h1 class="contenido">Smash Paddle</h1>
+    </section>
+    <section id="tienda-ubicacion">
+        <section id="tienda">
+            <div class="raquetas">
+
+                <div id="catalogoRaquetas"></div>
+
+            </div>
+        </section>
+
+        <section id="ubicacion">
+            <div class="titulo-ubicacion">
+                <h2>Nuestra Ubicacion</h2>
+            </div>
+            <div class="mapa">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5550.720190881836!2d-67.5794286550476!3d-45.92410227960004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbde5ac6deac1700f%3A0x766edece10542d42!2sSmash%20Padel!5e0!3m2!1ses-419!2sar!4v1707166716020!5m2!1ses-419!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
     </section>
     <!-- Contenido de la página -->
     <main>
         <!-- Sección de Turnos -->
         <section id="turnos">
             <h2 class="titulo">Turnos</h2>
+            <h3 class="subtitulo-turnos">Esta Semana</h3>
+            <!-- Tabla de horarios -->
+            <div class="tabla-desplazable">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Día/Hora</th>
+                            <th>13:00</th>
+                            <th>13:30</th>
+                            <th>14:30</th>
+                            <th>15:00</th>
+                            <th>16:00</th>
+                            <th>16:30</th>
+                            <th>17:30</th>
+                            <th>18:00</th>
+                            <th>19:00</th>
+                            <th>19:30</th>
+                            <th>20:30</th>
+                            <th>21:00</th>
+                            <th>22:00</th>
+                            <th>22:30</th>
+                                                     
+                          
+                            <!-- Agrega más columnas para otros horarios -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ancho-especial" >Lunes</td>
+                            <td class="horario" data-dia="Lunes" data-hora="13:00"></td>
+                            <td class="horario" data-dia="Lunes" data-hora="13:30"></td>
+                            <td class="horario" data-dia="Lunes" data-hora="14:30"></td>
+                            <td class="horario" data-dia="Lunes" data-hora="15:00"></td>
+                            <td class="horario" data-dia="Lunes" data-hora="16:00"></td>
+                            <td class="horario" data-dia="Lunes" data-hora="16:30"></td>
+                            <td class="horario" data-dia="Lunes" data-hora="17:30"></td>
+                            <td class="horario" data-dia="Lunes" data-hora="18:00"></td>
+                            <td class="horario" data-dia="Lunes" data-hora="19:00"></td>
+                            <td class="horario" data-dia="Lunes" data-hora="19:30"></td>
+                            <td class="horario" data-dia="Lunes" data-hora="20:30"></td>
+                            <td class="horario" data-dia="Lunes" data-hora="21:00"></td>
+                            <td class="horario" data-dia="Lunes" data-hora="22:00"></td>
+                            <td class="horario" data-dia="Lunes" data-hora="22:30"></td>
+                            
+                            <!-- Agrega más columnas para otros horarios -->
+                        </tr>
+                        <!-- Agrega más filas para otros días -->
+                        <tr>
+                            <td>Martes</td>
+                            <td class="horario" data-dia="Martes" data-hora="13:00"></td>
+                            <td class="horario" data-dia="Martes" data-hora="13:30"></td>
+                            <td class="horario" data-dia="Martes" data-hora="14:30"></td>
+                            <td class="horario" data-dia="Martes" data-hora="15:00"></td>
+                            <td class="horario" data-dia="Martes" data-hora="16:00"></td>
+                            <td class="horario" data-dia="Martes" data-hora="16:30"></td>
+                            <td class="horario" data-dia="Martes" data-hora="17:30"></td>
+                            <td class="horario" data-dia="Martes" data-hora="18:00"></td>
+                            <td class="horario" data-dia="Martes" data-hora="19:00"></td>
+                            <td class="horario" data-dia="Martes" data-hora="19:30"></td>
+                            <td class="horario" data-dia="Martes" data-hora="20:30"></td>
+                            <td class="horario" data-dia="Martes" data-hora="21:00"></td>
+                            <td class="horario" data-dia="Martes" data-hora="22:00"></td>
+                            <td class="horario" data-dia="Martes" data-hora="22:30"></td>
+                            
+                        </tr>
+                        <tr>
+                            <td>Mercoles</td>
+                            <td class="horario" data-dia="Mercoles" data-hora="13:00"></td>
+                            <td class="horario" data-dia="Mercoles" data-hora="13:30"></td>
+                            <td class="horario" data-dia="Mercoles" data-hora="14:30"></td>
+                            <td class="horario" data-dia="Mercoles" data-hora="15:00"></td>
+                            <td class="horario" data-dia="Mercoles" data-hora="16:00"></td>
+                            <td class="horario" data-dia="Mercoles" data-hora="16:30"></td>
+                            <td class="horario" data-dia="Mercoles" data-hora="17:30"></td>
+                            <td class="horario" data-dia="Mercoles" data-hora="18:00"></td>
+                            <td class="horario" data-dia="Mercoles" data-hora="19:00"></td>
+                            <td class="horario" data-dia="Mercoles" data-hora="19:30"></td>
+                            <td class="horario" data-dia="Mercoles" data-hora="20:30"></td>
+                            <td class="horario" data-dia="Mercoles" data-hora="21:00"></td>
+                            <td class="horario" data-dia="Mercoles" data-hora="22:00"></td>
+                            <td class="horario" data-dia="Mercoles" data-hora="22:30"></td>
+                            
+                        </tr>
+                        <tr>
+                            <td>Jueves</td>
+                            <td class="horario" data-dia="Jueves" data-hora="13:00"></td>
+                            <td class="horario" data-dia="Jueves" data-hora="13:30"></td>
+                            <td class="horario" data-dia="Jueves" data-hora="14:30"></td>
+                            <td class="horario" data-dia="Jueves" data-hora="15:00"></td>
+                            <td class="horario" data-dia="Jueves" data-hora="16:00"></td>
+                            <td class="horario" data-dia="Jueves" data-hora="16:30"></td>
+                            <td class="horario" data-dia="Jueves" data-hora="17:30"></td>
+                            <td class="horario" data-dia="Jueves" data-hora="18:00"></td>
+                            <td class="horario" data-dia="Jueves" data-hora="19:00"></td>
+                            <td class="horario" data-dia="Jueves" data-hora="19:30"></td>
+                            <td class="horario" data-dia="Jueves" data-hora="20:30"></td>
+                            <td class="horario" data-dia="Jueves" data-hora="21:00"></td>
+                            <td class="horario" data-dia="Jueves" data-hora="22:00"></td>
+                            <td class="horario" data-dia="Jueves" data-hora="22:30"></td>
+                            
+                        </tr>
+                        <tr>
+                            <td>Viernes</td>
+                            <td class="horario" data-dia="Viernes" data-hora="13:00"></td>
+                            <td class="horario" data-dia="Viernes" data-hora="13:30"></td>
+                            <td class="horario" data-dia="Viernes" data-hora="14:30"></td>
+                            <td class="horario" data-dia="Viernes" data-hora="15:00"></td>
+                            <td class="horario" data-dia="Viernes" data-hora="16:00"></td>
+                            <td class="horario" data-dia="Viernes" data-hora="16:30"></td>
+                            <td class="horario" data-dia="Viernes" data-hora="17:30"></td>
+                            <td class="horario" data-dia="Viernes" data-hora="18:00"></td>
+                            <td class="horario" data-dia="Viernes" data-hora="19:00"></td>
+                            <td class="horario" data-dia="Viernes" data-hora="19:30"></td>
+                            <td class="horario" data-dia="Viernes" data-hora="20:30"></td>
+                            <td class="horario" data-dia="Viernes" data-hora="21:00"></td>
+                            <td class="horario" data-dia="Viernes" data-hora="22:00"></td>
+                            <td class="horario" data-dia="Viernes" data-hora="22:30"></td>
+                            
+                        </tr>
+                        <tr>
+                            <td>Sabado</td>
+                            <td class="horario" data-dia="Sabado" data-hora="13:00"></td>
+                            <td class="horario" data-dia="Sabado" data-hora="13:30"></td>
+                            <td class="horario" data-dia="Sabado" data-hora="14:30"></td>
+                            <td class="horario" data-dia="Sabado" data-hora="15:00"></td>
+                            <td class="horario" data-dia="Sabado" data-hora="16:00"></td>
+                            <td class="horario" data-dia="Sabado" data-hora="16:30"></td>
+                            <td class="horario" data-dia="Sabado" data-hora="17:30"></td>
+                            <td class="horario" data-dia="Sabado" data-hora="18:00"></td>
+                            <td class="horario" data-dia="Sabado" data-hora="19:00"></td>
+                            <td class="horario" data-dia="Sabado" data-hora="19:30"></td>
+                            <td class="horario" data-dia="Sabado" data-hora="20:30"></td>
+                            <td class="horario" data-dia="Sabado" data-hora="21:00"></td>
+                            <td class="horario" data-dia="Sabado" data-hora="22:00"></td>
+                            <td class="horario" data-dia="Sabado" data-hora="22:30"></td>
+                            
+                        </tr>
+                        <tr>
+                            <td>Domingo</td>
+                            <td class="horario" data-dia="Domingo" data-hora="13:00"></td>
+                            <td class="horario" data-dia="Domingo" data-hora="13:30"></td>
+                            <td class="horario" data-dia="Domingo" data-hora="14:30"></td>
+                            <td class="horario" data-dia="Domingo" data-hora="15:00"></td>
+                            <td class="horario" data-dia="Domingo" data-hora="16:00"></td>
+                            <td class="horario" data-dia="Domingo" data-hora="16:30"></td>
+                            <td class="horario" data-dia="Domingo" data-hora="17:30"></td>
+                            <td class="horario" data-dia="Domingo" data-hora="18:00"></td>
+                            <td class="horario" data-dia="Domingo" data-hora="19:00"></td>
+                            <td class="horario" data-dia="Domingo" data-hora="19:30"></td>
+                            <td class="horario" data-dia="Domingo" data-hora="20:30"></td>
+                            <td class="horario" data-dia="Domingo" data-hora="21:00"></td>
+                            <td class="horario" data-dia="Domingo" data-hora="22:00"></td>
+                            <td class="horario" data-dia="Domingo" data-hora="22:30"></td>
+                            
+                        </tr>
+                            
+                    </tbody>
+                </table>
+            </div>
+            <!-- Contenedor para centrar el botón -->
+            <div class="button-container">
+                <button id="btnReservar" onclick="reservarTurno()">Reservar Turno</button>
+            </div>
 
+            <div class="titulo-proxima-semana">
+            <h3>Proxima Semana</h3>
+            </div>
             <!-- Tabla de horarios -->
             <table>
                 <thead>
@@ -68,6 +253,9 @@
                         <th>15:00</th>
                         <th>17:00</th>
                         <th>19:00</th>
+                        <th>20:00</th>
+                        <th>21:00</th>
+                        <th>22:00</th>
                         <!-- Agrega más columnas para otros horarios -->
                     </tr>
                 </thead>
@@ -77,6 +265,9 @@
                         <td class="horario" data-dia="Lunes" data-hora="15:00"></td>
                         <td class="horario" data-dia="Lunes" data-hora="17:00"></td>
                         <td class="horario" data-dia="Lunes" data-hora="19:00"></td>
+                        <td class="horario" data-dia="Lunes" data-hora="20:00"></td>
+                        <td class="horario" data-dia="Lunes" data-hora="21:00"></td>
+                        <td class="horario" data-dia="Lunes" data-hora="22:00"></td>
                         <!-- Agrega más columnas para otros horarios -->
                     </tr>
                     <!-- Agrega más filas para otros días -->
@@ -85,6 +276,9 @@
                         <td class="horario" data-dia="Martes" data-hora="15:00"></td>
                         <td class="horario" data-dia="Martes" data-hora="17:00"></td>
                         <td class="horario" data-dia="Martes" data-hora="19:00"></td>
+                        <td class="horario" data-dia="Martes" data-hora="20:00"></td>
+                        <td class="horario" data-dia="Martes" data-hora="21:00"></td>
+                        <td class="horario" data-dia="Martes" data-hora="22:00"></td>
                         
                     </tr>
                     <tr>
@@ -92,6 +286,9 @@
                         <td class="horario" data-dia="Miercoles" data-hora="15:00"></td>
                         <td class="horario" data-dia="Miercoles" data-hora="17:00"></td>
                         <td class="horario" data-dia="Miercoles" data-hora="19:00"></td>
+                        <td class="horario" data-dia="Miercoles" data-hora="20:00"></td>
+                        <td class="horario" data-dia="Miercoles" data-hora="21:00"></td>
+                        <td class="horario" data-dia="Miercoles" data-hora="22:00"></td>
                         
                     </tr>
                     <tr>
@@ -99,6 +296,9 @@
                         <td class="horario" data-dia="Jueves" data-hora="15:00"></td>
                         <td class="horario" data-dia="Jueves" data-hora="17:00"></td>
                         <td class="horario" data-dia="Jueves" data-hora="19:00"></td>
+                        <td class="horario" data-dia="Jueves" data-hora="20:00"></td>
+                        <td class="horario" data-dia="Jueves" data-hora="21:00"></td>
+                        <td class="horario" data-dia="Jueves" data-hora="22:00"></td>
                         
                     </tr>
                     <tr>
@@ -106,6 +306,9 @@
                         <td class="horario" data-dia="Viernes" data-hora="15:00"></td>
                         <td class="horario" data-dia="Viernes" data-hora="17:00"></td>
                         <td class="horario" data-dia="Viernes" data-hora="19:00"></td>
+                        <td class="horario" data-dia="Viernes" data-hora="20:00"></td>
+                        <td class="horario" data-dia="Viernes" data-hora="21:00"></td>
+                        <td class="horario" data-dia="Viernes" data-hora="22:00"></td>
                         
                     </tr>
                     <tr>
@@ -113,6 +316,9 @@
                         <td class="horario" data-dia="Sabado" data-hora="15:00"></td>
                         <td class="horario" data-dia="Sabado" data-hora="17:00"></td>
                         <td class="horario" data-dia="Sabado" data-hora="19:00"></td>
+                        <td class="horario" data-dia="Sabado" data-hora="20:00"></td>
+                        <td class="horario" data-dia="Sabado" data-hora="21:00"></td>
+                        <td class="horario" data-dia="Sabado" data-hora="22:00"></td>
                         
                     </tr>
                     <tr>
@@ -120,6 +326,9 @@
                         <td class="horario" data-dia="Domingo" data-hora="15:00"></td>
                         <td class="horario" data-dia="Domingo" data-hora="17:00"></td>
                         <td class="horario" data-dia="Domingo" data-hora="19:00"></td>
+                        <td class="horario" data-dia="Domingo" data-hora="20:00"></td>
+                        <td class="horario" data-dia="Domingo" data-hora="21:00"></td>
+                        <td class="horario" data-dia="Domingo" data-hora="22:00"></td>
                         
                     </tr>
                         
@@ -133,8 +342,10 @@
         </section>
     </main>
 
+    <a href="https://wa.me/2975389734?text=Me%20gustaría%20saber%20el%20precio%20de%20la%20cancha" class="whatsapp" target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
+
     <!-- Pie de Página -->
-    <footer>
+    <footer id="contacto">
         <div class="contacto">
             <p>Email: info@smashpaddel.com</p>
             <p>Teléfono: (123) 456-7890</p>
@@ -144,8 +355,8 @@
             <a href="#" target="_blank">Twitter</a>
             <a href="#" target="_blank">Instagram</a>
         </div>
-        <div class="whatsapp">
-            <a href="https://wa.me/1234567890" target="_blank" class="whatsapp-icon">¡Contáctanos en WhatsApp!</a>
+        <div class="whatsapp-pie">
+            <a href="https://wa.me/1234567890" target="_blank" class="whatsapp-icon-pie">¡Contáctanos en WhatsApp!</a>
         </div>
     </footer>
 

@@ -1,3 +1,64 @@
+
+table {
+    width: 100%; 
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    height: auto;
+    
+}
+
+.tabla-desplazable {
+    overflow-x: auto;
+    max-width: 1450px; 
+    margin-top: 20px;
+    display: block; /* Añade esta línea para corregir el desplazamiento horizontal */
+    white-space: nowrap; /* Evita que el contenido se envuelva y cause un desplazamiento vertical */
+}
+
+/* Asegura que la fila "Día/Hora" sea visible al desplazarse */
+thead th {
+    position: sticky;
+    top: 0;
+    background-color: #ff9100;
+    z-index: 1;
+}
+
+/* Establecer tamaños específicos para las primeras dos columnas */
+th:nth-child(1), td:nth-child(1){
+    width: 200px;
+}
+th:nth-child(2), td:nth-child(2),
+th:nth-child(3), td:nth-child(3) {
+    width: 150px; /* Ajusta el valor según tus necesidades */
+}
+
+/*
+table {
+    width: 120%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.tabla-desplazable {
+    overflow-x: scroll;
+
+}
+*/
+/*
 table {
     width: 100%;
     border-collapse: collapse;
@@ -11,13 +72,12 @@ th, td {
     cursor: pointer;
     
 }
-
+*/
 td {
     border: 1px solid #ddd;
     padding: 10px;
     text-align: center;
-    cursor: pointer;
-    
+    cursor: pointer; 
 }
 
 th {
@@ -47,7 +107,8 @@ button {
     margin-top: 20px;
 }
 
-.titulo{
+.titulo,.subtitulo-turnos,.titulo-proxima-semana{
     text-align: center;
     margin-top: 20px;
 }
+
